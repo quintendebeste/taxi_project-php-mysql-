@@ -1,6 +1,7 @@
 <?php
 
 require "functions.php";
+require "database.php";
 
 $autos = showData("*", "cars", NULL);
 
@@ -33,6 +34,7 @@ $autos = showData("*", "cars", NULL);
             </tr>
         </thead>
         <tbody>
+        <?php echo $auto['id']; ?>
             <?php foreach ($autos as $auto) : ?>
                 <tr>
                     <td><?php echo $auto['id']; ?></td>
@@ -40,16 +42,7 @@ $autos = showData("*", "cars", NULL);
                     <td><?php echo $auto['model']; ?></td>
                     <td><?php echo $auto['numberplate']; ?></td>
                     <td><?php echo $auto['amount_of_seats']; ?></td>
-                    <td>
-                        <form method="post">
-                            <input type="submit" name="delete" value="Delete">
-                        </form>
-                        <?php
-                        if (isset($_POST['delete'])) {
-                            deleteData($auto['id'],"cars");
-                        }
-                        ?>
-                    </td>
+                    <td><a href="#" onclick="deleteData(<?php echo $auto['id']?>,<?php echo 'cars'?>)"></td>
                 </tr>
             <?php endforeach; ?>
         </tbody>
