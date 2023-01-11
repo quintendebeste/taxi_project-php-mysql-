@@ -2,7 +2,7 @@
 
 require "functions.php";
 
-$gebruikers = showData("*", "users", "costumer");
+$gebruikers = showData("*", "users", "customer");
 
 ?>
 
