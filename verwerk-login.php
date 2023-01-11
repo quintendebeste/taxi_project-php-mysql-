@@ -29,7 +29,6 @@ if (!is_null($user)) {
     $_SESSION["password"] = $user["password"];
     $_SESSION["isloggedin"] = true;
     $_SESSION["user_id"] = $user["id"];
-    echo("test");
     
     if ($user["role"] == "customer") {
         header("location: homepage.php");
