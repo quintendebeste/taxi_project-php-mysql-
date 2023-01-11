@@ -36,13 +36,10 @@ $gebruikers = showData("*", "users", "costumer");
             </tr>
         </thead>
         <tbody>
-            
-            <?php foreach ($gebruikers as $gebruiker1) : ?>
-                <?php var_dump($gebruiker1)?>
-                <?php foreach ($gebruiker1 as $gebruiker) : ?>
+            <?php foreach ($gebruikers as $gebruiker) : ?>
                 <tr>
-                    <td><?php echo $gebruiker[0][0]; ?></td>
-                    <td><?php echo $gebruiker[1][0]; ?></td>
+                    <td><?php echo $gebruiker['id']; ?></td>
+                    <td><?php echo $gebruiker['firstname']; ?></td>
                     <td><?php echo $gebruiker['lastname']; ?></td>
                     <td><?php echo $gebruiker['email']; ?></td>
                     <td><?php echo $gebruiker['address']; ?></td>
@@ -50,8 +47,12 @@ $gebruikers = showData("*", "users", "costumer");
                     <td><?php echo $gebruiker['role']; ?></td>
                     <td><?php echo $gebruiker['is_active']; ?></td>
                     <td><?php echo $gebruiker['password']; ?></td>
+                    <td>
+                    <td>
+                        <a href="functions.php?id=<?php echo $auto['id']; ?>&table=cars">delete</a>
+                    </td>
+                    
                 </tr>
-            <?php endforeach; ?>
             <?php endforeach; ?>
         </tbody>
     </table>

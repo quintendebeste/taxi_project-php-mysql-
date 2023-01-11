@@ -10,7 +10,7 @@
 <body>
     <nav class="menubalk">
         <ul>
-            <li><a href="categories_show.php">zie categorieen</a></li>
+            <li><a href="overzicht.php">overzicht ritten</a></li>
             <li><a href="overzicht-auto.php">zie auto's</a></li>  
             <li><a href="overzicht-medewerkers.php">overzicht medewerkers</a></li>
             <li><a href="overzicht-gebruikers.php">overzicht gebruikers</a></li>

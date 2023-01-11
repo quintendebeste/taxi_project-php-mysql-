@@ -18,6 +18,7 @@ $medewerkers = showData("*", "users", "employee");
 </head>
 
 <body>
+
     <table>
 
         <thead>
@@ -45,6 +46,10 @@ $medewerkers = showData("*", "users", "employee");
                     <td><?php echo $medewerker["role"]; ?></td>
                     <td><?php echo $medewerker["is_active"]; ?></td>
                     <td><?php echo $medewerker["password"]; ?></td>
+                    <td>
+                    <td>
+                        <a href="functions.php?id=<?php echo $medewerker['id']; ?>&table=users">delete</a>
+                    </td>
                 </tr>
             <?php endforeach; ?>
         </tbody>

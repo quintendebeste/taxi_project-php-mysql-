@@ -1,4 +1,9 @@
 <?php
+
+if(!empty($_GET)){
+    deleteData($_GET['id'],$_GET['table']);
+}
+
 function showData($collums, $table, $role)
 {
 
