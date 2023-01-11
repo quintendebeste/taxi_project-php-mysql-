@@ -28,11 +28,9 @@ if (!is_null($user)) {
     $_SESSION["firstname"] = $user["firstname"];
     $_SESSION["password"] = $user["password"];
     $_SESSION["isloggedin"] = true;
-    
     //var_dump($_SESSION);
     
-    if ($user["role"] == "costumer") {
-
+    if ($user["role"] == "customer") {
         header("location: homepage.php");
     }
     if ($user["role"] == "employee") {
