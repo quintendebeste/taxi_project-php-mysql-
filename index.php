@@ -10,17 +10,15 @@
 </head>
 
 <body>
-    <div class="form" >
-        <form action="verwerk-login.php" method="post">
-            <label for="">voornaam</label>
-            <input type="text" name="firstname" id=""><br>
-            <label for="">wachtwoord</label>
-            <input type="password" name="password" id=""><br>
-            <button name="submit" type="submit">login</button>
-            <button><a class="btn" href="registreer.php">registreer</a></button>
-        </form>
-    </div>
-
+    <form id="login-form" action="verwerk-login.php" method="post">
+        <h1>Taxi Bedrijf</h1>
+        <input type="text" name="firstname" placeholder="Gebruikersnaam" required>
+        <input type="password" name="password" placeholder="Wachtwoord" required>
+        <input type="submit" name="submit" value="Inloggen">
+    </form>
+    <form id="login-form" action="registreer.php" method="post">
+        <input type="submit" value="Registreren">
+    </form>
 </body>
 
 </html>
