@@ -1,9 +1,7 @@
 <?php
 
-require "functions.php";
-
-$medewerkers = showData("*", "users", "employee");
-
+$func = $_GET["function"];
+$id = $_GET["id"];
 ?>
 
 <!DOCTYPE html>
@@ -17,7 +15,7 @@ $medewerkers = showData("*", "users", "employee");
 </head>
 <body>
     <div class="form">
-        <form action="verwerk-registreer.php" method="post">
+        <form action="function.php" method="post">
             <label for="">voornaam</label>
             <input type="text" name="firstname" id=""><br>
             <label for="">achternaam</label>

@@ -1,3 +1,6 @@
+<?php
+$id = $_SESSION["id"];
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,6 +15,7 @@
         <ul>
             <li><a href="categories_show.php">zie categorieen</a></li>
             <li><a href="products_show.php">zie producten</a></li>  
+            <li><a href="rit-aanvragen.php?id=<?php echo $id?>&function=ritaanvragen">rit aanvragen</a></li>  
         </ul>
     </nav>
     <div class="homepage-title">

@@ -1,5 +1,11 @@
 <?php
 
+if($_GET["function"] = "ritaanvragen"){
+    function ritaanvragen(){
+        
+    }
+}
+
 if(!empty($_GET)){
     deleteData($_GET['id'],$_GET['table']);
 }
