@@ -16,7 +16,7 @@
         <input type="password" name="password" placeholder="Wachtwoord" required>
         <input type="submit" name="submit" value="Inloggen">
     </form>
-    <form id="login-form" action="registreer.php" method="post">
+    <form id="login-form" action="loggin/registreer.php" method="post">
         <input type="submit" value="Registreren">
     </form>
 </body>
