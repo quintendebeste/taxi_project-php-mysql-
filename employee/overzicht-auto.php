@@ -41,7 +41,7 @@ $autos = showData("*", "cars", NULL);
                     <td><?php echo $auto['numberplate']; ?></td>
                     <td><?php echo $auto['amount_of_seats']; ?></td>
                     <td>
-                        <a href="functions.php?id=<?php echo $auto['id']; ?>&table=cars">delete</a>
+                        <a href="../functions.php?id=<?php echo $auto['id']; ?>&table=cars">delete</a>
                     </td>
                 </tr>
             <?php endforeach; ?>

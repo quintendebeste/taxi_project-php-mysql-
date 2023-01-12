@@ -32,13 +32,13 @@ if (!is_null($user)) {
     $_SESSION["role"] = $user["role"];
     
     if ($user["role"] == "customer") {
-        header("location: klant/homepage.php");
+        header("location: ../klant/homepage.php");
     }
     if ($user["role"] == "employee") {
-        header("location: employee/homepageE.php");
+        header("location: ../employee/homepageE.php");
     } 
     if ($user["role"] == "driver") {
-        header("location: driver/homepageD.php");
+        header("location: ../driver/homepageD.php");
     }
 }
 else{

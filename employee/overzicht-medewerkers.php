@@ -48,7 +48,7 @@ $medewerkers = showData("*", "users", "employee");
                     <td><?php echo $medewerker["password"]; ?></td>
                     <td>
                     <td>
-                        <a href="functions.php?id=<?php echo $medewerker['id']; ?>&table=users">delete</a>
+                        <a href="../functions.php?id=<?php echo $medewerker['id']; ?>&table=users">delete</a>
                     </td>
                 </tr>
             <?php endforeach; ?>

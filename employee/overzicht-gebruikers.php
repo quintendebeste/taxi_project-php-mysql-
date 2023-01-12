@@ -49,7 +49,7 @@ $gebruikers = showData("*", "users", "customer");
                     <td><?php echo $gebruiker['password']; ?></td>
                     <td>
                     <td>
-                        <a href="functions.php?id=<?php echo $auto['id']; ?>&table=cars">delete</a>
+                        <a href="../functions.php?id=<?php echo $auto['id']; ?>&table=cars">delete</a>
                     </td>
                     
                 </tr>
