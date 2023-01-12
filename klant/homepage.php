@@ -1,5 +1,9 @@
 <?php
 $id = $_SESSION["id"];
+if($_SESSION["isloggedin"] = false)
+{
+    header("location: index.php");
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">

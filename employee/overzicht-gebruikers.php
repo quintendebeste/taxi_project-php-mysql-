@@ -3,7 +3,10 @@
 require "../functions.php";
 
 $gebruikers = showData("*", "users", "customer");
-
+if($_SESSION["isloggedin"] = false)
+{
+    header("location: index.php");
+}
 ?>
 
 <!DOCTYPE html>

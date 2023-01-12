@@ -2,6 +2,10 @@
 
 $func = $_GET["function"];
 $id = $_GET["id"];
+if($_SESSION["isloggedin"] = false)
+{
+    header("location: index.php");
+}
 ?>
 
 <!DOCTYPE html>

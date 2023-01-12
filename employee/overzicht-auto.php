@@ -3,7 +3,10 @@
 require "../functions.php";
 
 $autos = showData("*", "cars", NULL);
-
+if($_SESSION["isloggedin"] = false)
+{
+    header("location: index.php");
+}
 ?>
 
 <!DOCTYPE html>
