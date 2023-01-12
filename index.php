@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <form id="login-form" action="verwerk-login.php" method="post">
+    <form id="login-form" action="loggin/verwerk-login.php" method="post">
         <h1>Taxi Bedrijf</h1>
         <input type="text" name="firstname" placeholder="Gebruikersnaam" required>
         <input type="password" name="password" placeholder="Wachtwoord" required>

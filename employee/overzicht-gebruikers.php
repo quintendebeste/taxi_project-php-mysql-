@@ -1,8 +1,8 @@
 <?php
 
-require "functions.php";
+require "../functions.php";
 
-$medewerkers = showData("*", "users", "employee");
+$gebruikers = showData("*", "users", "customer");
 
 ?>
 
@@ -18,7 +18,8 @@ $medewerkers = showData("*", "users", "employee");
 </head>
 
 <body>
-
+   
+   
     <table>
 
         <thead>
@@ -35,26 +36,26 @@ $medewerkers = showData("*", "users", "employee");
             </tr>
         </thead>
         <tbody>
-            <?php foreach ($medewerkers as $medewerker) : ?>
+            <?php foreach ($gebruikers as $gebruiker) : ?>
                 <tr>
-                    <td><?php echo $medewerker["id"]; ?></td>
-                    <td><?php echo $medewerker["firstname"]; ?></td>
-                    <td><?php echo $medewerker["lastname"]; ?></td>
-                    <td><?php echo $medewerker["email"]; ?></td>
-                    <td><?php echo $medewerker["address"]; ?></td>
-                    <td><?php echo $medewerker["city"]; ?></td>
-                    <td><?php echo $medewerker["role"]; ?></td>
-                    <td><?php echo $medewerker["is_active"]; ?></td>
-                    <td><?php echo $medewerker["password"]; ?></td>
+                    <td><?php echo $gebruiker['id']; ?></td>
+                    <td><?php echo $gebruiker['firstname']; ?></td>
+                    <td><?php echo $gebruiker['lastname']; ?></td>
+                    <td><?php echo $gebruiker['email']; ?></td>
+                    <td><?php echo $gebruiker['address']; ?></td>
+                    <td><?php echo $gebruiker['city']; ?></td>
+                    <td><?php echo $gebruiker['role']; ?></td>
+                    <td><?php echo $gebruiker['is_active']; ?></td>
+                    <td><?php echo $gebruiker['password']; ?></td>
                     <td>
                     <td>
-                        <a href="functions.php?id=<?php echo $medewerker['id']; ?>&table=users">delete</a>
+                        <a href="functions.php?id=<?php echo $auto['id']; ?>&table=cars">delete</a>
                     </td>
+                    
                 </tr>
             <?php endforeach; ?>
         </tbody>
     </table>
-
 </body>
 
 </html>

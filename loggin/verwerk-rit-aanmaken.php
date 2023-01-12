@@ -1,7 +1,7 @@
 <?php
 
 // Stap 1
-require 'database.php';
+require '../database.php';
 
 
 $sql = "INSERT INTO users (firstname,lastname,email,address,city,password,role) VALUES (?,?,?,?,?,?,?)";
