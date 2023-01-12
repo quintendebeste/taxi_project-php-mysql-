@@ -16,20 +16,27 @@ $id = $_GET["id"];
 <body>
     <div class="form">
         <form action="function.php" method="post">
-            <label for="">voornaam</label>
-            <input type="text" name="firstname" id=""><br>
-            <label for="">achternaam</label>
-            <input type="text" name="lastname" id=""><br>
-            <label for="">email</label>
-            <input type="text" name="email" id=""><br>
-            <label for="">adres</label>
-            <input type="text" name="address" id="">
-            <label for="">stad</label>
-            <input type="text" name="city" id="">
-            <label for="">wachtwoord</label>
-            <input type="password" name="password" id=""><br>
-            <button name="submit" type="submit">registreer</button>
-            <button><a href="index.php">login</a></button>
+        <label for="num_passagiers">aantal passagiers:</label>
+        <select name="num_passagiers" id="num_passagiers" size="1">
+            <option value="1-4">1-4</option>
+            <option value="5-8">5-8</option>
+        </select><br>
+        <label for="pickup_datetime">pickup datum en tijd:</label>
+        <input type="datetime-local" id="pickup_datetime" name = "pickup_datetime"><br>
+
+        <label for="pickup_address">pickup adres:</label>
+        <input type="text" id="pickup_address" name = "pickup_address"><br>
+
+        <label for="pickup_city">pickup stad:</label>
+        <input type="text" id="pickup_city" name = "pickup_city"><br>
+
+        <label for="destination_address">aankomst adres:</label>
+        <input type="text" id="destination_address" name = "destination_address"><br>
+
+        <label for="destination_city">aankomst stad:</label>
+        <input type="text" id="destination_city" name = "destination_city"><br>
+
+        <input type="submit"><br>
         </form>
     </div>
 </body>
