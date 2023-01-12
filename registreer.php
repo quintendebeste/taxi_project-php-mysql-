@@ -8,23 +8,18 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="form">
-        <form action="verwerk-registreer.php" method="post">
-            <label for="">voornaam</label>
-            <input type="text" name="firstname" id=""><br>
-            <label for="">achternaam</label>
-            <input type="text" name="lastname" id=""><br>
-            <label for="">email</label>
-            <input type="text" name="email" id=""><br>
-            <label for="">adres</label>
-            <input type="text" name="address" id="">
-            <label for="">stad</label>
-            <input type="text" name="city" id="">
-            <label for="">wachtwoord</label>
-            <input type="password" name="password" id=""><br>
-            <button name="submit" type="submit">registreer</button>
-            <button><a href="index.php">login</a></button>
-        </form>
-    </div>
+    <form id="login-form" action="verwerk-registreer.php" method="post">
+        <h1>Taxi Bedrijf</h1>
+        <input type="text" name="firstname" placeholder="Voornaam" required>
+        <input type="text" name="lastname" placeholder="Achternaam" required>
+        <input type="text" name="email" placeholder="Email" required>
+        <input type="text" name="address" placeholder="Adres" required>
+        <input type="text" name="city" placeholder="Stad" required>
+        <input type="password" name="password" placeholder="Wachtwoord" required>
+        <input type="submit" name="submit" value="Registreren">
+    </form>
+    <form id="login-form" action="index.php" method="post">
+        <input type="submit" value="Login">
+    </form>
 </body>
 </html>
