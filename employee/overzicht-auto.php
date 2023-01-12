@@ -1,6 +1,6 @@
 <?php
 
-require "functions.php";
+require "../functions.php";
 
 $autos = showData("*", "cars", NULL);
 

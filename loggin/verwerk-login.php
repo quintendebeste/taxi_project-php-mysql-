@@ -1,6 +1,6 @@
 <?php
 
-require "database.php";
+require "../database.php";
 
 
 $firstname = $_POST["firstname"];
@@ -32,18 +32,18 @@ if (!is_null($user)) {
     $_SESSION["role"] = $user["role"];
     
     if ($user["role"] == "customer") {
-        header("location: homepage.php");
+        header("location: klant/homepage.php");
     }
     if ($user["role"] == "employee") {
-        header("location: homepageE.php");
+        header("location: employee/homepageE.php");
     } 
     if ($user["role"] == "driver") {
-        header("location: homepageD.php");
+        header("location: driver/homepageD.php");
     }
 }
 else{
     echo "geen account";
-    header("index.php");
+    header("../index.php");
 }
 
 
