@@ -15,7 +15,7 @@ $id = $_GET["id"];
 </head>
 <body>
     <div class="form">
-        <form action="function.php" method="post">
+        <form action="../function.php" method="post">
         <label for="num_passagiers">aantal passagiers:</label>
         <select name="num_passagiers" id="num_passagiers" size="1">
             <option value="1-4">1-4</option>
