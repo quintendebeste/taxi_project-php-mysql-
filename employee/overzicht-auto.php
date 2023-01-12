@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 require "../functions.php";
 
 $autos = showData("*", "cars", NULL);

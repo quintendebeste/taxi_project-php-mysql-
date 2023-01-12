@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 $func = $_GET["function"];
 $id = $_GET["id"];
 if($_SESSION["isloggedin"] = false)
@@ -19,7 +19,7 @@ if($_SESSION["isloggedin"] = false)
 </head>
 <body>
     <div class="form">
-        <form action="../function.php" method="post">
+        <form action="../function.php?id=<?php echo $id?>&function=<?php echo $func?>" method="post">
         <label for="num_passagiers">aantal passagiers:</label>
         <select name="num_passagiers" id="num_passagiers" size="1">
             <option value="1-4">1-4</option>

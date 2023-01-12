@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 require "../functions.php";
 
 $medewerkers = showData("*", "users", "employee");

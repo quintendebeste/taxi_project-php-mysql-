@@ -1,4 +1,5 @@
 <?php
+session_start();
 $id = $_SESSION["id"];
 if($_SESSION["isloggedin"] = false)
 {
