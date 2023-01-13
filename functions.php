@@ -1,9 +1,9 @@
 <?php
-session_start();
-if($_GET["function"] = "ritaanvragen"){
-    var_dump($_POST);die;
+
+if($_GET["function"] == "ritaanvragen"){
     function ritaanvragen(){
         require 'database.php';
+        var_dump($_POST);die;
 
     $number_of_passengers = $_POST["number_of_passengers"];
     $pickup_datetime = $_POST["pickup_datetime"];

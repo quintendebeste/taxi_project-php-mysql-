@@ -1,12 +1,11 @@
 <?php
-session_start();
 require "../functions.php";
-
-$autos = showData("*", "cars", NULL);
+session_start();
 if($_SESSION["isloggedin"] = false)
 {
     header("location: index.php");
 }
+$autos = showData("*", "cars", NULL);
 ?>
 
 <!DOCTYPE html>

@@ -1,6 +1,6 @@
 <?php
 session_start();
-$id = $_SESSION["id"];
+$id = $_SESSION["user_id"];
 if($_SESSION["isloggedin"] = false)
 {
     header("location: index.php");

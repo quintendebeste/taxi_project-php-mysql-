@@ -1,12 +1,11 @@
 <?php
-session_start();
 require "../functions.php";
-
-$gebruikers = showData("*", "users", "customer");
+session_start();
 if($_SESSION["isloggedin"] = false)
 {
     header("location: index.php");
 }
+$gebruikers = showData("*", "users", "customer");
 ?>
 
 <!DOCTYPE html>
