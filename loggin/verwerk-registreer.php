@@ -15,7 +15,7 @@ $email = $_POST["email"];
 $address = $_POST["address"];
 $city = $_POST["city"];
 $password = $_POST["password"];
-$role = "costumer";
+$role = "customer";
 mysqli_stmt_execute($insertstatement);
 
 
