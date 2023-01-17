@@ -12,7 +12,7 @@
 <body>
     <form id="login-form" action="loggin/verwerk-login.php" method="post">
         <h1>Taxi Bedrijf</h1>
-        <input type="text" name="firstname" placeholder="Gebruikersnaam" required>
+        <input type="text" name="email" placeholder="email" required>
         <input type="password" name="password" placeholder="Wachtwoord" required>
         <input type="submit" name="submit" value="Inloggen">
     </form>

@@ -1,10 +1,21 @@
 <?php
+require "../database.php";
+require "../functions.php";
 session_start();
-$id = $_SESSION["user_id"];
 if($_SESSION["isloggedin"] = false)
 {
-    header("location: index.php");
+    header("location: ../index.php");
 }
+$id = $_SESSION['user_id'];
+
+//aangevraagde ritten
+$sql = "SELECT pickup_datetime, destination_datetime, distance_driven, totalprice FROM rides WHERE client_id = $id AND status = 'Aangevraagd'";
+$result = mysqli_query($conn, $sql);
+$ride = mysqli_fetch_all($result, MYSQLI_ASSOC);
+//goedgekeurde ritten
+$sql2 = "SELECT pickup_datetime, destination_datetime, distance_driven, totalprice FROM rides WHERE client_id = $id AND status = 'Bezig'";
+$result2 = mysqli_query($conn, $sql2);
+$ride2 = mysqli_fetch_all($result2, MYSQLI_ASSOC);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -12,20 +23,70 @@ if($_SESSION["isloggedin"] = false)
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="../style.css">
     <title>Document</title>
+    <link rel="stylesheet" href="logging-design.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
 </head>
 <body>
-    <nav class="menubalk">
-        <ul>
-            <li><a href="categories_show.php">zie categorieen</a></li>
-            <li><a href="products_show.php">zie producten</a></li>  
-            <li><a href="rit-aanvragen.php?id=<?php echo $id?>&function=ritaanvragen">rit aanvragen</a></li>  
-        </ul>
-    </nav>
-    <div class="homepage-title">
-        <h2>dit is de homepage van de klant</h2>
-    </div>
-    
+    <form class="form" action="../loggin/logout.php" method="post">
+        <button>logout</button>
+    </form>
+    <form class="form" action="rit-aanvragen.php" method="post">
+        <button>vraag een rit aan!</button>
+    </form>
+    <h2>aangevraagde ritjes</h2>
+    <br>
+    <table class="table table-hover table-striped-columns table-sm table-bordered table-dark">
+        <thead>
+            <tr>
+                <th>driver</th>
+                <th>car</th>
+                <th>pickup time</th>
+                <th>destination time</th>
+                <th>price</th>
+                <th>afstand</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach ($ride as $ride_info) : ?>
+                <tr>
+                    <td><?php echo "unknown" ?></td>
+                    <td><?php echo "unknown" ?></td>
+                    <td><?php echo $ride_info["pickup_datetime"] ?></td>
+                    <td><?php echo $ride_info["destination_datetime"] ?></td>
+                    <td><?php echo $ride_info["totalprice"] ?></td>
+                    <td><?php echo $ride_info["distance_driven"] ?></td>
+                </tr>
+            <?php endforeach; ?>
+        </tbody>
+    </table>
+    <br>
+    <h2>goedgekeurde ritjes</h2>
+    <?php?>
+    <br>
+    <table class="table table-hover table-striped-columns table-sm table-bordered table-dark">
+        <thead>
+            <tr>
+                <th>driver</th>
+                <th>car</th>
+                <th>pickup time</th>
+                <th>destination time</th>
+                <th>price</th>
+                <th>afstand</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach ($ride2 as $ride_info2) : ?>
+                <tr>
+                    <td><?php echo "unknown" ?></td>
+                    <td><?php echo "unknown" ?></td>
+                    <td><?php echo $ride_info2["pickup_datetime"] ?></td>
+                    <td><?php echo $ride_info2["destination_datetime"] ?></td>
+                    <td><?php echo $ride_info2["totalprice"] ?></td>
+                    <td><?php echo $ride_info2["distance_driven"] ?></td>
+                </tr>
+            <?php endforeach; ?>
+        </tbody>
+    </table>
 </body>
 </html>

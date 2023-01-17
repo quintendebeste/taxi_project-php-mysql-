@@ -1,6 +1,5 @@
 <?php
 
-// Stap 1
 require '../database.php';
 
 

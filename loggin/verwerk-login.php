@@ -3,17 +3,17 @@
 require "../database.php";
 
 
-$firstname = $_POST["firstname"];
+$email = $_POST["email"];
 $password = $_POST["password"];
 
 
 
 
-$sql = "SELECT * FROM users WHERE firstname = ? AND password = ?";
+$sql = "SELECT * FROM users WHERE email = ? AND password = ?";
 
 $stmt = mysqli_prepare($conn,$sql);
 
-mysqli_stmt_bind_param($stmt,"ss", $firstname,$password);
+mysqli_stmt_bind_param($stmt,"ss", $email,$password);
 
 mysqli_stmt_execute($stmt);
 
