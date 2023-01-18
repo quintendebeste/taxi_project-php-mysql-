@@ -2,8 +2,7 @@
 require "../database.php";
 require "../functions.php";
 session_start();
-if($_SESSION["isloggedin"] = false)
-{
+if ($_SESSION["isloggedin"] = false) {
     header("location: ../index.php");
 }
 $id = $_SESSION['user_id'];
@@ -19,6 +18,7 @@ $ride2 = mysqli_fetch_all($result2, MYSQLI_ASSOC);
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -27,13 +27,11 @@ $ride2 = mysqli_fetch_all($result2, MYSQLI_ASSOC);
     <link rel="stylesheet" href="logging-design.css">
     <link rel="stylesheet" type="text/css" href="../style.css">
 </head>
+
 <body>
-    <form class="form" action="../loggin/logout.php" method="post">
-        <button>logout</button>
-    </form>
-    <form class="form" action="rit-aanvragen.php" method="post">
-        <button>vraag een rit aan!</button>
-    </form>
+    <a class="btn" href="../loggin/logout.php">loguit</a>
+    <a class="btn" href="rit-aanvragen.php">rit aanvragen</a>
+
     <h2>aangevraagde ritjes</h2>
     <br>
     <table class="table table-hover table-striped-columns table-sm table-bordered table-dark">
@@ -88,4 +86,5 @@ $ride2 = mysqli_fetch_all($result2, MYSQLI_ASSOC);
         </tbody>
     </table>
 </body>
+
 </html>

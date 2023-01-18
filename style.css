@@ -112,3 +112,15 @@ body{
 #login-form input[type="submit"]:hover {
     opacity: 0.8;
 }
+.btn {
+  display: inline-block;
+  padding: 6px 10px;
+  background-color: #00ffff;
+  color: rgb(72, 145, 36);
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.btn:hover {
+  background-color: #291b06;
+}
