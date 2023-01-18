@@ -13,10 +13,12 @@ if($_SESSION["isloggedin"] = false)
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=form, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../style.css">
     <title>Document</title>
 </head>
 
 <body>
+    <div class="form">
     <form action="rit_aanvragen_process.php" method="post">
         <label for="num_passengers">aantal passagier:</label>
         <select id="dropdown" name="num_passengers" size="1">
@@ -45,6 +47,9 @@ if($_SESSION["isloggedin"] = false)
 
         <input type="submit" value="Submit">
     </form>
+
+    </div>
+    
 </body>
 
 </html>
