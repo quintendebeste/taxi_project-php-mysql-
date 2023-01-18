@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-if (!isset($_SESSION["isloggedin"]) || $_SESSION["isloggedin"] != true || $_SESSION["role"] != "employee") {
+if ($_SESSION["isloggedin"] = false) {
     echo "Dze gebruiker is hier niet toegestaan";
     header("location: ../index.html");
     exit;
@@ -33,9 +33,7 @@ $all_rides = mysqli_fetch_all($result, MYSQLI_ASSOC);
 </header>
 
 <body>
-    <form class="form" action="../loggin/logout.php" method="post">
-        <button>logout</button>
-    </form>
+    <a class="btn" href="../loggin/logout.php">loguit</a>
 <h2>aangevraagde ritjes</h2>
     <br>
     <table class="table table-hover table-striped-columns table-sm table-bordered table-dark">

@@ -2,7 +2,7 @@
 // Database configuratie
 $host  = "localhost";
 $dbuser = "root";
-$dbpass = "";
+$dbpass = "root";
 $dbname = "taxibedrijf";
 
 // Maak een  database connectie
