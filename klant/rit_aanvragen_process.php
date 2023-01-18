@@ -19,11 +19,16 @@ $destination_datetime = $datetime->format('Y-m-d H:i:s');
 var_dump($_SESSION);
 
 $sql = "INSERT INTO rides (client_id,number_of_passengers,pickup_datetime ,pickup_address ,pickup_city ,destination_datetime,destination_address,destination_city )
-        VALUES ('$client_id','$num_passengers', '$pickup_datetime','$pickup_address', '$pickup_plaats', '$destination_datetime' , '$destination_address', '$destination_plaats')";
+        VALUES (?,?,?,?,?,?,?,?)";
 
-if(mysqli_query($conn, $sql)){
+$stmt = mysqli_prepare($conn, $sql);
+
+mysqli_stmt_bind_param($stmt, 'isssssss', $client_id, $num_passengers, $pickup_datetime, $pickup_address, $pickup_plaats, $destination_datetime, $destination_address, $destination_plaats);
+
+if (mysqli_stmt_execute($stmt)) {
     header("location: homepage.php");
+} else {
+    echo("fout: query niet uitgevoerd");
 }
-echo("fout: query niet uitgevoerd");
 
-mysqli_close($mysqli, $sql);
+mysqli_stmt_close($stmt);

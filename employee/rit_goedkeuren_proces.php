@@ -17,7 +17,7 @@ $id = $_GET['id']
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../style.css">
     <style>
     </style>
 </head>
@@ -28,7 +28,8 @@ $id = $_GET['id']
 
 <body>
 <h2>kies een chaufeur en auto</h2>
-            <form class="form" action="" method="post">
+<div class="form">
+<form class="form" action="" method="post">
                 <select id="dropdown" name="car">
                     <?php
                     $sql3 ="SELECT * FROM cars WHERE amount_of_seats = " .$_GET['num_passengers'];
@@ -49,6 +50,9 @@ $id = $_GET['id']
                 </select>
                 <button type="submit" name="submit">keur rit goed</button>
             </form>
+
+</div>
+            
 </body>
 <?php 
 if(isset($_POST['submit']))
