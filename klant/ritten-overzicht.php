@@ -1,20 +1,16 @@
 <?php
 
 
-require 'database.php';
+require '../database.php';
 
-$sql = "SELECT 
-products.name AS product_name,
-categories.name AS categorie_name,
-price,
-products.id AS product_id
- FROM `products`
- JOIN categories
-      ON categories.id = products.category;";
+$sql = "SELECT * FROM `rides` 
+JOIN cars ON cars.id = rides.taxi_id 
+JOIN users ON users.id = rides.client_id
+ORDER BY distance_driven DESC LIMIT 3;";
 
 $result = mysqli_query($conn, $sql);
 
-$products = mysqli_fetch_all($result, MYSQLI_ASSOC);
+$rides = mysqli_fetch_all($result, MYSQLI_ASSOC);
 ?>
 
 <!DOCTYPE html>
@@ -44,13 +40,13 @@ $products = mysqli_fetch_all($result, MYSQLI_ASSOC);
         </thead>
         
         <tbody>
-            <?php foreach ($products as $product) : ?>
+            <?php foreach ($products as $products) : ?>
                 <tr>
-                    <td><?php echo $product["product_id"]; ?></td>
-                    <td><?php echo $product["product_name"]; ?></td>
-                    <td><?php echo $product["price"]; ?></td>
-                    <td><?php echo $product["categorie_name"]; ?></td>
-                    <td><?php echo $product[""]?></td>
+                    <td><?php echo $rides["product_id"]; ?></td>
+                    <td><?php echo $rides["product_name"]; ?></td>
+                    <td><?php echo $rides["price"]; ?></td>
+                    <td><?php echo $rides["categorie_name"]; ?></td>
+                    <td><?php echo $rides[""]?></td>
                 </tr>
                 <?php endforeach; ?>
             </tbody>
