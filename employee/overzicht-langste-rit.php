@@ -3,12 +3,13 @@
 
 require '../database.php';
 
-$sql = "SELECT users.firstname as client_name 
+$sql = "SELECT users1.firstname as client_name, users2.firstname as driver_name
 
-FROM `rides` 
+FROM rides
 
 JOIN cars ON cars.id = rides.taxi_id 
-JOIN users ON users.id = rides.client_id
+JOIN users as users1 ON users1.id = rides.client_id and users1.role = 'customer'
+JOIN users as users2 ON users2.id = rides.driver_id and users2.role = 'driver'
 ORDER BY distance_driven DESC LIMIT 3";
 
 $result = mysqli_query($conn, $sql);
@@ -45,12 +46,7 @@ $rides = mysqli_fetch_all($result, MYSQLI_ASSOC);
             <?php foreach ($rides as $ride) : ?>
                 <tr>
                     <td><?php echo $ride["client_name"]; ?></td>
-                    <td><?php echo $ride[""]; ?></td>
-                    <td><?php echo $ride[""]; ?></td>
-                    <td><?php echo $ride[""]; ?></td>
-                    <td><?php echo $ride[""]?></td>
-                    <td><?php echo $ride[""]?></td>
-                    
+                    <td><?php echo $ride["driver_name"]; ?></td>                 
                 </tr>
                 <?php endforeach; ?>
             </tbody>

@@ -10,7 +10,7 @@ if (!isset($_SESSION["isloggedin"]) || $_SESSION["isloggedin"] != true || $_SESS
 require '../database.php';
 require '../functions.php';
 
-$sql = "SELECT * FROM rides";
+$sql = "SELECT * FROM rides WHERE status = 'Aangevraagd'";
 $result = mysqli_query($conn, $sql);
 $all_rides = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
@@ -51,40 +51,23 @@ $all_rides = mysqli_fetch_all($result, MYSQLI_ASSOC);
                 <th>update</th>
             </tr>
         </thead>
+        <script>
+            function submitform(){
+                document.myform.submit()
+            }
+        </script>
         <tbody>
             <?php foreach ($all_rides as $ride_info) : ?>
                 <tr>
-                    <td>
-                        <select id="dropdown" name="driver_name">
-                        <?php
-                        $sql2 = "SELECT * FROM users WHERE role = 'driver'";
-                        $result2 = mysqli_query($conn, $sql2);
-                        while ($row = mysqli_fetch_assoc($result2)) {
-                            echo "<option value='" . $row['driver_names'] . "'>" . $row['firstname'] . "</option>";
-                            $_SESSION['driver_name']=$_POST['driver_name'];
-                        }
-                        ?>
-                    </select>
-                    </td>
+                    <td><?php echo('unknown')?></td>
                     <td><?php echo $ride_info["number_of_passengers"] ?></td>
-                    <td>
-                    <select id="dropdown" name="car">
-                        <?php
-                        $sql3 ="SELECT * FROM cars WHERE amount_of_seats = " .$ride_info['number_of_passengers'];
-                        $result3 = mysqli_query($conn, $sql3);
-                        while ($row2 = mysqli_fetch_assoc($result3)) {
-                            echo "<option value='" . $row2['car'] . "'>".$row2['brand'] . " " . $row2['model'] . "</option>";
-                            $_SESSION['car']=$_POST['car'];
-                        }
-                        ?>
-                    </select>
-                    </td>
+                    <td><?php echo('unknown')?></td>
                     <td><?php echo $ride_info["pickup_datetime"] ?></td>
                     <td><?php echo $ride_info["destination_datetime"] ?></td>
                     <td><?php echo $ride_info["totalprice"] ?></td>
                     <td><?php echo $ride_info["distance_driven"] ?></td>
                     <td>
-                        <form class="form" action="a.php" method="post">
+                        <form class="form" action="rit_goedkeuren_proces.php?num_passengers=<?php echo $ride_info["number_of_passengers"] ?>&id=<?php echo $ride_info["id"] ?>" method="post">
                             <?php?>
                             <button>keur rit goed</button>
                         </form>
