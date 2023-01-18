@@ -21,7 +21,7 @@ $gebruikers = showData("*", "users", "customer");
 
 <body>
    
-   
+    <a class="btn" href="../loggin/logout.php">loguit</a>
     <table>
 
         <thead>

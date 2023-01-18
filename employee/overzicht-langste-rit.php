@@ -29,6 +29,7 @@ $rides = mysqli_fetch_all($result, MYSQLI_ASSOC);
 </head>
 
 <body>
+    <a class="btn" href="../loggin/logout.php">loguit</a>
     <table>
         <thead>
             <tr>
