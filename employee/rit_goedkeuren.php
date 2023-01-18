@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-if ($_SESSION["isloggedin"] = false) {
+if (!isset($_SESSION["isloggedin"]) || $_SESSION["isloggedin"] != true || $_SESSION["role"] != "employee") {
     echo "Dze gebruiker is hier niet toegestaan";
     header("location: ../index.html");
     exit;
