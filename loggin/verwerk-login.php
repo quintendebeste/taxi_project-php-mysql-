@@ -30,7 +30,6 @@ if (!is_null($user)) {
     $_SESSION["isloggedin"] = true;
     $_SESSION["user_id"] = $user["id"];
     $_SESSION["role"] = $user["role"];
-    
     if ($user["role"] == "customer") {
         header("location: ../klant/homepage.php");
     }

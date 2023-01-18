@@ -9,7 +9,7 @@ FROM `rides`
 
 JOIN cars ON cars.id = rides.taxi_id 
 JOIN users ON users.id = rides.client_id
-ORDER BY distance_driven DESC LIMIT 3;";
+ORDER BY distance_driven DESC LIMIT 3";
 
 $result = mysqli_query($conn, $sql);
 

@@ -1,7 +1,6 @@
 <?php
 
 session_start();
-
 if (!isset($_SESSION["isloggedin"]) || $_SESSION["isloggedin"] != true || $_SESSION["role"] != "employee") {
     echo "Dze gebruiker is hier niet toegestaan";
     header("location: ../index.html");
@@ -62,7 +61,7 @@ $all_rides = mysqli_fetch_all($result, MYSQLI_ASSOC);
                         $result2 = mysqli_query($conn, $sql2);
                         while ($row = mysqli_fetch_assoc($result2)) {
                             echo "<option value='" . $row['driver_names'] . "'>" . $row['firstname'] . "</option>";
-                            //$driver_name = $_POST['driver_name'];
+                            $_SESSION['driver_name']=$_POST['driver_name'];
                         }
                         ?>
                     </select>
@@ -75,7 +74,7 @@ $all_rides = mysqli_fetch_all($result, MYSQLI_ASSOC);
                         $result3 = mysqli_query($conn, $sql3);
                         while ($row2 = mysqli_fetch_assoc($result3)) {
                             echo "<option value='" . $row2['car'] . "'>".$row2['brand'] . " " . $row2['model'] . "</option>";
-                            //$car = $_POST['car'];
+                            $_SESSION['car']=$_POST['car'];
                         }
                         ?>
                     </select>
@@ -85,8 +84,8 @@ $all_rides = mysqli_fetch_all($result, MYSQLI_ASSOC);
                     <td><?php echo $ride_info["totalprice"] ?></td>
                     <td><?php echo $ride_info["distance_driven"] ?></td>
                     <td>
-                        <form class="form" action="rit_goedkeuren.php" method="post">
-                            <?php //$_POST['car'] = $car; $_POST['driver_name'] =$driver_name;?>
+                        <form class="form" action="a.php" method="post">
+                            <?php?>
                             <button>keur rit goed</button>
                         </form>
                     </td>
