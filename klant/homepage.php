@@ -20,6 +20,7 @@ if($_SESSION["isloggedin"] = false)
         <ul>
             <li><a href="overzicht-ritten-klant.php">overzicht ritten</a></li>
             <li><a href="rit-aanvragen.php">rit aanvragen</a></li> 
+            <a class="btn" href="../loggin/logout.php">loguit</a>
         </ul>
     </nav>
     <div class="homepage-title">
