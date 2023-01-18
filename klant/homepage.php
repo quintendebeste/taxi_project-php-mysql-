@@ -18,10 +18,9 @@ if($_SESSION["isloggedin"] = false)
 <body>
     <nav class="menubalk">
         <ul>
-            <li><a href="geenIdee.php">geen idee</a></li>
+            <li><a href="overzicht-ritten-klant.php">overzicht ritten</a></li>
             <li><a href="rit-aanvragen.php">rit aanvragen</a></li> 
-            <li><a href="categories_show.php">zie categorieen</a></li>
-            <li><a href="ritten-overzicht.php">gereden ritten</a></li>  
+            <li><a href="categories_show.php">zie categorieen</a></li>  
         </ul>
     </nav>
     <div class="homepage-title">

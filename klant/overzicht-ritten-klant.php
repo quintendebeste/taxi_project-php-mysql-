@@ -25,7 +25,7 @@ $ride2 = mysqli_fetch_all($result2, MYSQLI_ASSOC);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="logging-design.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../style.css">
 </head>
 <body>
     <form class="form" action="../loggin/logout.php" method="post">
