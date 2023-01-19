@@ -18,6 +18,7 @@ if ($_SESSION["isloggedin"] = false) {
 
 <body>
     <a class="btn" href="../loggin/logout.php">loguit</a>
+    <a class="btn" href="homepage.php">terug</a>
     <div class="form">
         <form action="rit_aanvragen_process.php" method="post">
             <label for="num_passengers">aantal passagier:</label>

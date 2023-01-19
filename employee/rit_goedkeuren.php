@@ -34,6 +34,7 @@ $all_rides = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
 <body>
     <a class="btn" href="../loggin/logout.php">loguit</a>
+    <a class="btn" href="homepageE.php">terug</a>
 <h2>aangevraagde ritjes</h2>
     <br>
     <table class="table table-hover table-striped-columns table-sm table-bordered table-dark">
@@ -66,7 +67,6 @@ $all_rides = mysqli_fetch_all($result, MYSQLI_ASSOC);
                     <td><?php echo $ride_info["distance_driven"] ?></td>
                     <td>
                         <form class="form" action="rit_goedkeuren_proces.php?num_passengers=<?php echo $ride_info["number_of_passengers"] ?>&id=<?php echo $ride_info["id"] ?>" method="post">
-                            <?php?>
                             <button>keur rit goed</button>
                         </form>
                     </td>

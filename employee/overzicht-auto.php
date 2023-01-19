@@ -17,6 +17,7 @@ $autos = showData("*", "cars", NULL);
 
 <body>
     <a class="btn" href="../loggin/logout.php">loguit</a>
+    <a class="btn" href="homepageE.php">terug</a>
     <table>
 
         <thead>

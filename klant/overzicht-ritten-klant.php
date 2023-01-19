@@ -31,6 +31,7 @@ $ride2 = mysqli_fetch_all($result2, MYSQLI_ASSOC);
 <body>
     <a class="btn" href="../loggin/logout.php">loguit</a>
     <a class="btn" href="rit-aanvragen.php">rit aanvragen</a>
+    <a class="btn" href="homepage.php">terug</a>
 
     <h2>aangevraagde ritjes</h2>
     <br>
